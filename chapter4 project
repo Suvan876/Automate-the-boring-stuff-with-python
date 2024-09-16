@@ -1,0 +1,12 @@
+#comma code
+def list_to_string(list):
+  if len(list)==0:
+    return""
+  elif len(list)==1:
+    return list[0]
+  else:
+  return ','.join(list[:-1])+' and '+list[-1]
+spam=['apples', 'bananas', 'tofu', 'cats']
+list_to_string(spam)
+
+

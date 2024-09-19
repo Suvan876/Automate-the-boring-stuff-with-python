@@ -1,4 +1,56 @@
 #Chess Dictionary Validator
+def isValidChessBoard(board):
+    # Initialize piece counts
+    pieceCount = {'w': 0, 'b': 0}
+    kingCount = {'wking': 0, 'bking': 0}
+    pawnCount = {'wpawn': 0, 'bpawn': 0}
+    
+    # Valid positions on the board
+    validPositions = [f"{row}{col}" for row in range(1, 9) for col in 'abcdefgh']
+    
+    # Valid piece types
+    validPieces = ['pawn', 'knight', 'bishop', 'rook', 'queen', 'king']
+    
+    # Loop through the board dictionary
+    for position, piece in board.items():
+        # Check if the position is valid
+        if position not in validPositions:
+            return False
+
+        # Check if the piece type is valid
+        if len(piece) < 2 or piece[0] not in 'wb' or piece[1:] not in validPieces:
+            return False
+        
+        # Count kings
+        if piece == 'wking' or piece == 'bking':
+            kingCount[piece] += 1
+        
+        # Count pawns
+        if piece == 'wpawn' or piece == 'bpawn':
+            pawnCount[piece] += 1
+        
+        # Count total pieces for each player
+        pieceCount[piece[0]] += 1
+
+    # Check if there's exactly one king for each side
+    if kingCount['wking'] != 1 or kingCount['bking'] != 1:
+        return False
+
+    # Check if the number of pieces does not exceed 16 per player
+    if pieceCount['w'] > 16 or pieceCount['b'] > 16:
+        return False
+    
+    # Check if the number of pawns does not exceed 8 per player
+    if pawnCount['wpawn'] > 8 or pawnCount['bpawn'] > 8:
+        return False
+
+    # If all checks pass, the board is valid
+    return True
+
+# Example usage:
+board = {'1h': 'bking', '6c': 'wqueen', '2g': 'bbishop', 
+         '5h': 'bqueen', '3e': 'wking'}
+print(isValidChessBoard(board))  # Output: True or False
 
 
 

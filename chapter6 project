@@ -1,3 +1,15 @@
+#Multi-Clipboard Automatic Messages
+
+
+
+#Adding Bullets to Wiki Markup
+
+
+
+#Pig Latin
+
+
+
 #Table Printer
 def printTable(tableData):
   colWidths=[0]*len(tableData)

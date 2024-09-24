@@ -33,3 +33,22 @@ for questionNumber in range(numberOfQuestions):
         correctAnswers += 1
     time.sleep(1) # Brief pause to let user see the result.
 print('Score: %s / %s' % (correctAnswers, numberOfQuestions))
+
+
+
+#Sandwich Maker
+
+
+
+#Write Your Own Multiplication Quiz
+
+
+
+
+
+
+
+
+
+
+

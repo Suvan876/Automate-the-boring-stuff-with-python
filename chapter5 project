@@ -54,7 +54,11 @@ print(isValidChessBoard(board))  # Output: True or False
 
 
 
+#Fantasy Game Inventory
 
+
+
+#List to Dictionary Function for Fantasy Game Inventory
 
 
 

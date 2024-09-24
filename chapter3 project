@@ -1,3 +1,4 @@
+#The Collatz Sequence
 def collatz(number):
     if number % 2==0:
         number=number//2
@@ -6,6 +7,9 @@ def collatz(number):
     print(number)
     return number
 
+
+
+#Input Validation
 def main():
     try:
         number=int(input("Enter an integer:"))
